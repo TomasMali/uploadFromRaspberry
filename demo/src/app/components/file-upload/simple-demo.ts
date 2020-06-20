@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FileUploader } from 'ng2-file-upload';
 
 // const URL = '/api/';
-const URL = 'http://localhost:3000/api';
+const URL = 'http://93.49.6.246:3002/api';
 
 @Component({
   selector: 'simple-demo',

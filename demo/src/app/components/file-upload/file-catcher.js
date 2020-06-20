@@ -4,7 +4,7 @@ var multer = require('multer');
 var fs = require('fs');
 var app = express();
 
-var DIR = '/Users/tomas/Desktop/uploade';
+var DIR = '/External/upload';
 
 
 
