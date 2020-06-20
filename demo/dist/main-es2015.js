@@ -44,7 +44,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("/*eslint-disable*/\nvar express = require('express');\nvar multer = require('multer');\nvar fs = require('fs');\nvar app = express();\n\nvar DIR = '/Users/tomas/Desktop/uploade';\n\n\n\n\nvar storage = multer.diskStorage({\n  destination: function(req, file, cb) {\n      cb(null, DIR);\n   },\n  filename: function (req, file, cb) {\n      cb(null , file.originalname);\n  }\n});\n\n\n\n\nvar upload = multer({ storage: storage }).any()\n\napp.use(function (req, res, next) {\n  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');\n  res.setHeader('Access-Control-Allow-Methods', 'POST');\n  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');\n  res.setHeader('Access-Control-Allow-Credentials', true);\n  next();\n});\n\napp.use(upload);\n\n\n\napp.get('/api', function (req, res) {\n  res.end('file catcher example');\n});\n\napp.post('/api', function (req, res) {\n\n  upload(req, res, function (err) {\n    console.log(req )\n    if (err) {\n      return res.end(err.toString());\n    }\n\n    res.end('File is uploaded');\n  });\n});\n\n\nvar PORT = process.env.PORT || 3000;\n\napp.listen(PORT, function () {\n  console.log('Working on port ' + PORT);\n});\n");
+/* harmony default export */ __webpack_exports__["default"] = ("/*eslint-disable*/\nvar express = require('express');\nvar multer = require('multer');\nvar fs = require('fs');\nvar app = express();\n\nvar DIR = '/External/upload';\n\n\n\n\nvar storage = multer.diskStorage({\n  destination: function(req, file, cb) {\n      cb(null, DIR);\n   },\n  filename: function (req, file, cb) {\n      cb(null , file.originalname);\n  }\n});\n\n\n\n\nvar upload = multer({ storage: storage }).any()\n\napp.use(function (req, res, next) {\n  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');\n  res.setHeader('Access-Control-Allow-Methods', 'POST');\n  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');\n  res.setHeader('Access-Control-Allow-Credentials', true);\n  next();\n});\n\napp.use(upload);\n\n\n\napp.get('/api', function (req, res) {\n  res.end('file catcher example');\n});\n\napp.post('/api', function (req, res) {\n\n  upload(req, res, function (err) {\n    console.log(req )\n    if (err) {\n      return res.end(err.toString());\n    }\n\n    res.end('File is uploaded');\n  });\n});\n\n\nvar PORT = process.env.PORT || 3000;\n\napp.listen(PORT, function () {\n  console.log('Working on port ' + PORT);\n});\n");
 
 /***/ }),
 
@@ -70,7 +70,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { Component } from '@angular/core';\nimport { FileUploader } from 'ng2-file-upload';\n\n// const URL = '/api/';\nconst URL = 'http://localhost:3000/api';\n\n@Component({\n  selector: 'simple-demo',\n  templateUrl: './simple-demo.html'\n})\nexport class SimpleDemoComponent {\n\n  uploader:FileUploader;\n  hasBaseDropZoneOver:boolean;\n  hasAnotherDropZoneOver:boolean;\n  response:string;\n\n  constructor (){\n    this.uploader = new FileUploader({url: URL});\n\n    this.hasBaseDropZoneOver = false;\n    this.hasAnotherDropZoneOver = false;\n\n    this.response = '';\n\n    this.uploader.response.subscribe( res => this.response = res );\n   // public uploader:FileUploader = new FileUploader({url: URL});\n\n  }\n\n  public fileOverBase(e:any):void {\n    this.hasBaseDropZoneOver = e;\n  }\n\n  public fileOverAnother(e:any):void {\n    this.hasAnotherDropZoneOver = e;\n  }\n}\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { Component } from '@angular/core';\nimport { FileUploader } from 'ng2-file-upload';\n\n// const URL = '/api/';\nconst URL = 'http://93.49.6.246:3002/api';\n\n@Component({\n  selector: 'simple-demo',\n  templateUrl: './simple-demo.html'\n})\nexport class SimpleDemoComponent {\n\n  uploader:FileUploader;\n  hasBaseDropZoneOver:boolean;\n  hasAnotherDropZoneOver:boolean;\n  response:string;\n\n  constructor (){\n    this.uploader = new FileUploader({url: URL});\n\n    this.hasBaseDropZoneOver = false;\n    this.hasAnotherDropZoneOver = false;\n\n    this.response = '';\n\n    this.uploader.response.subscribe( res => this.response = res );\n   // public uploader:FileUploader = new FileUploader({url: URL});\n\n  }\n\n  public fileOverBase(e:any):void {\n    this.hasBaseDropZoneOver = e;\n  }\n\n  public fileOverAnother(e:any):void {\n    this.hasAnotherDropZoneOver = e;\n  }\n}\n");
 
 /***/ }),
 
@@ -362,7 +362,7 @@ var __importDefault = (undefined && undefined.__importDefault) || function (mod)
 
 
 // const URL = '/api/';
-const URL = 'http://localhost:3000/api';
+const URL = 'http://93.49.6.246:3002/api';
 let SimpleDemoComponent = class SimpleDemoComponent {
     constructor() {
         this.uploader = new ng2_file_upload__WEBPACK_IMPORTED_MODULE_1__["FileUploader"]({ url: URL });
@@ -476,7 +476,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/tomas/Desktop/ng2-file-upload/demo/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/tomas/Desktop/uploadFromRaspberry/demo/src/main.ts */"./src/main.ts");
 
 
 /***/ })
