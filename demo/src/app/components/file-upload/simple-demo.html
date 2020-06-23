@@ -4,6 +4,11 @@
     .another-file-over-class { border: dotted 3px green; }
 
     html, body { height: 100%; }
+
+    .upload {
+        text-align: center;
+  border: 3px solid green;
+    }
 </style>
 
 
@@ -101,6 +106,7 @@
                         (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
                     <span class="glyphicon glyphicon-upload"></span> Upload all
                 </button>
+
                 <button type="button" class="btn btn-warning btn-s"
                         (click)="uploader.cancelAll()" [disabled]="!uploader.isUploading">
                     <span class="glyphicon glyphicon-ban-circle"></span> Cancel all
@@ -127,4 +133,13 @@
             </div>
         </div>
     </div>
+
+
+ 
+    <h3>Download files to <a href="http://93.49.6.246:8080/" target="_blank"> this link</a> </h3>
+
+
+
+  
+
 
